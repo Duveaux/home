@@ -1,0 +1,410 @@
+- id: "1620481718455"
+  alias: "Auto lights: hallway"
+  description: ""
+  use_blueprint:
+    path: duveaux/tod_motion_light.yaml
+    input:
+      motion_sensor: binary_sensor.hallway_occupied
+      target_light:
+        area_id: hallway
+      tod_modifier: sensor.current_tod_modifier
+      area_modifier: input_number.light_modifier_hallway
+- id: "1620553359639"
+  alias: "Auto lights: toilet"
+  description: ""
+  use_blueprint:
+    path: duveaux/tod_motion_light.yaml
+    input:
+      motion_sensor: binary_sensor.toilet_motion_occupancy
+      target_light:
+        area_id: toilet
+      tod_modifier: sensor.current_tod_modifier_alt
+      area_modifier: input_number.light_modifier_toilet
+- id: "1620554102598"
+  alias: "Auto lights: storage"
+  description: ""
+  use_blueprint:
+    path: duveaux/tod_motion_light.yaml
+    input:
+      motion_sensor: binary_sensor.0x00158d0002b60874_occupancy
+      target_light:
+        area_id: storage
+      tod_modifier: sensor.current_tod_modifier_alt
+      area_modifier: input_number.light_modifier_storage
+      ignore_tod_modifier: true
+- id: "1620554728567"
+  alias: "Auto lights: kitchen"
+  description: ""
+  use_blueprint:
+    path: duveaux/tod_motion_light.yaml
+    input:
+      motion_sensor: binary_sensor.kitchen_occupied
+      target_light:
+        entity_id: light.kitchen
+      tod_modifier: sensor.current_tod_modifier
+      area_modifier: input_number.light_modifier_kitchen
+- id: "1620595430605"
+  alias: "Slappo: single"
+  description: ""
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: 23b0df81ac8143bb07623346abfb1ea8
+      type: click
+      subtype: single
+      discovery_id: 0x00158d0003d2c0e4 click_single
+    - platform: device
+      domain: mqtt
+      device_id: 745a77b92050bb714b6dcee57f817a39
+      type: click
+      subtype: single
+      discovery_id: 0x00158d0003d2c21b click_single
+    - platform: device
+      domain: mqtt
+      device_id: 8c3d4aa306079acbf69867425ab39e4b
+      type: click
+      subtype: single
+      discovery_id: 0x00158d0003d2c22c click_single
+    - platform: device
+      domain: mqtt
+      device_id: 3b2c8d3a1704e5779387afa84298d32d
+      type: click
+      subtype: single
+      discovery_id: 0x00158d0003d2bf6c click_single
+  condition: []
+  action:
+    - type: toggle
+      device_id: 1bc98b807a9355beb5e66d99f102b829
+      entity_id: light.0x680ae2fffeaeb55a
+      domain: light
+  mode: single
+- id: "1620595512060"
+  alias: "Slappo: double"
+  description: ""
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: 23b0df81ac8143bb07623346abfb1ea8
+      type: click
+      subtype: double
+      discovery_id: 0x00158d0003d2c0e4 click_double
+    - platform: device
+      domain: mqtt
+      device_id: 745a77b92050bb714b6dcee57f817a39
+      type: click
+      subtype: double
+      discovery_id: 0x00158d0003d2c21b click_double
+    - platform: device
+      domain: mqtt
+      device_id: 8c3d4aa306079acbf69867425ab39e4b
+      type: click
+      subtype: double
+      discovery_id: 0x00158d0003d2c22c click_double
+    - platform: device
+      domain: mqtt
+      device_id: 3b2c8d3a1704e5779387afa84298d32d
+      type: click
+      subtype: double
+      discovery_id: 0x00158d0003d2bf6c click_double
+  condition: []
+  action:
+    - type: toggle
+      device_id: d2812a27979543044873949894ac0e5c
+      entity_id: switch.0x04cf8cdf3c7e4721
+      domain: switch
+  mode: single
+- id: "1620595573269"
+  alias: "Slappo: hold"
+  description: ""
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: 23b0df81ac8143bb07623346abfb1ea8
+      type: action
+      subtype: hold
+      discovery_id: 0x00158d0003d2c0e4 action_hold
+    - platform: device
+      domain: mqtt
+      device_id: 745a77b92050bb714b6dcee57f817a39
+      type: action
+      subtype: hold
+      discovery_id: 0x00158d0003d2c21b action_hold
+    - platform: device
+      domain: mqtt
+      device_id: 8c3d4aa306079acbf69867425ab39e4b
+      type: action
+      subtype: hold
+      discovery_id: 0x00158d0003d2c22c action_hold
+    - platform: device
+      domain: mqtt
+      device_id: 3b2c8d3a1704e5779387afa84298d32d
+      type: action
+      subtype: hold
+      discovery_id: 0x00158d0003d2bf6c action_hold
+  condition: []
+  action:
+    - service: input_boolean.toggle
+      target:
+        entity_id: input_boolean.tod_manual_night
+  mode: single
+- id: "1620595632187"
+  alias: It's morning
+  description: ""
+  trigger:
+    - platform: state
+      entity_id: sensor.time_of_day
+      to: Morning
+  condition: []
+  action:
+    - service: input_boolean.turn_off
+      target:
+        entity_id: input_boolean.tod_manual_night
+  mode: single
+- id: "1620596620238"
+  alias: "Ikea control: door"
+  description: ""
+  use_blueprint:
+    path: EPMatt/ikea_five_button.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_entity: sensor.living_room_control_action
+      action_button_center_short:
+        - service: light.toggle
+          target:
+            entity_id: light.living_room_and_table
+      action_button_center_long: []
+      action_button_center_double: []
+      action_button_right_short:
+        - service: light.toggle
+          target:
+            entity_id: light.living_room_lights
+      action_button_right_long: []
+      action_button_left_short:
+        - service: light.toggle
+          target:
+            entity_id: light.table
+      action_button_right_release:
+        - service: script.ceiling_toggle_mode
+      action_button_up_short:
+        - service: media_player.volume_up
+          target:
+            entity_id: media_player.amp
+        - service: media_player.volume_up
+          target:
+            entity_id: media_player.amp
+        - service: media_player.volume_up
+          target:
+            entity_id: media_player.amp
+      action_button_down_short:
+        - service: media_player.volume_down
+          target:
+            entity_id: media_player.amp
+        - service: media_player.volume_down
+          target:
+            entity_id: media_player.amp
+        - service: media_player.volume_down
+          target:
+            entity_id: media_player.amp
+- id: "1620760981746"
+  alias: "Motion lights: shower"
+  description: ""
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.shower_occupied
+  condition: []
+  action:
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: binary_sensor.shower_occupied
+              state: "on"
+          sequence:
+            - type: turn_on
+              device_id: ba18eb40e59c40342034e5f600b6ede0
+              entity_id: light.0x588e81fffe066172
+              domain: light
+              brightness_pct: 100
+      default:
+        - type: turn_off
+          device_id: ba18eb40e59c40342034e5f600b6ede0
+          entity_id: light.0x588e81fffe066172
+          domain: light
+  mode: single
+- id: "1620810193709"
+  alias: TV starts playing
+  description: ""
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.activity_living_room_media
+      to: "on"
+  condition: []
+  action:
+    - service: media_player.select_source
+      target:
+        entity_id: media_player.amp
+      data:
+        source: Opt1
+  mode: single
+- id: "1621369682000"
+  alias: Slappo Study
+  description: ""
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: e9d3d3127a9af33d81948d8007770569
+      type: click
+      subtype: single
+      discovery_id: 0x00158d0001d8eca3 click_single
+  condition: []
+  action:
+    - type: toggle
+      device_id: 602cc136b5672c855d54535c77f7b1bb
+      entity_id: light.0x588e81fffe144ee2
+      domain: light
+  mode: single
+- id: "1622243122158"
+  alias: Sync tv volume with amp
+  description: ""
+  trigger:
+    - platform: state
+      entity_id: media_player.woonkamer_tv
+      attribute: volume_level
+    - platform: state
+      entity_id: media_player.woonkamer_tv
+      attribute: is_volume_muted
+  condition: []
+  action:
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: media_player.woonkamer_tv
+              attribute: is_volume_muted
+              state: "true"
+          sequence:
+            - service: media_player.volume_set
+              target:
+                entity_id: media_player.amp
+              data:
+                volume_level: 0
+      default:
+        - service: media_player.volume_set
+          target:
+            entity_id: media_player.amp
+          data_template:
+            volume_level: '{{state_attr("media_player.woonkamer_tv", "volume_level")}}'
+  mode: single
+- id: "1622908043743"
+  alias: "Auto lights: laundry room"
+  description: ""
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.0x00158d00045aaca1_occupancy
+  condition: []
+  action:
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: binary_sensor.0x00158d00045aaca1_occupancy
+              state: "on"
+          sequence:
+            - service: light.turn_on
+              target:
+                area_id: laundry_room
+              data:
+                transition: 3
+                brightness: 255
+      default:
+        - service: light.turn_off
+          target:
+            area_id: laundry_room
+          data:
+            transition: 3
+  mode: single
+- id: "1623446765390"
+  alias: "Ikea control: couch"
+  description: ""
+  use_blueprint:
+    path: EPMatt/ikea_five_button.yaml
+    input:
+      integration: Zigbee2MQTT
+      action_button_center_short:
+        - service: light.toggle
+          target:
+            entity_id: light.living_room_and_table
+      action_button_center_long: []
+      action_button_center_double: []
+      action_button_right_short:
+        - service: light.toggle
+          target:
+            entity_id: light.ceiling
+      action_button_right_long: []
+      action_button_left_short:
+        - service: light.toggle
+          data:
+            transition: 3
+          target:
+            entity_id: light.table_lights
+      action_button_right_release:
+        - service: script.ceiling_toggle_mode
+      action_button_up_short:
+        - service: media_player.volume_up
+          target:
+            entity_id: media_player.amp
+        - service: media_player.volume_up
+          target:
+            entity_id: media_player.amp
+        - service: media_player.volume_up
+          target:
+            entity_id: media_player.amp
+      action_button_down_short:
+        - service: media_player.volume_down
+          target:
+            entity_id: media_player.amp
+        - service: media_player.volume_down
+          target:
+            entity_id: media_player.amp
+        - service: media_player.volume_down
+          target:
+            entity_id: media_player.amp
+      controller_entity: sensor.0x680ae2fffe7f16c7_action
+      action_button_right_double:
+        - service: light.toggle
+          target:
+            entity_id: light.ceiling_ambilight
+          data:
+            transition: 3
+- id: "1624053970614"
+  alias: "Slappo: triple"
+  description: ""
+  trigger:
+    - platform: device
+      domain: mqtt
+      device_id: 23b0df81ac8143bb07623346abfb1ea8
+      type: click
+      subtype: triple
+      discovery_id: 0x00158d0003d2c0e4 click_triple
+    - platform: device
+      domain: mqtt
+      device_id: 745a77b92050bb714b6dcee57f817a39
+      type: click
+      subtype: triple
+      discovery_id: 0x00158d0003d2c21b click_triple
+    - platform: device
+      domain: mqtt
+      device_id: 8c3d4aa306079acbf69867425ab39e4b
+      type: click
+      subtype: triple
+      discovery_id: 0x00158d0003d2c22c click_triple
+    - platform: device
+      domain: mqtt
+      device_id: 3b2c8d3a1704e5779387afa84298d32d
+      type: click
+      subtype: triple
+      discovery_id: 0x00158d0003d2bf6c click_triple
+  condition: []
+  action:
+    - type: toggle
+      device_id: 996418ad8fa97cfb1d09683eba92c54b
+      entity_id: switch.lampoons
+      domain: switch
+  mode: single

@@ -1,0 +1,106 @@
+tv_sound:
+  alias: TV sound
+  sequence:
+  - service: media_player.select_source
+    data:
+      source: Opt2
+    entity_id: media_player.amp
+  mode: single
+ceiling_toggle_mode:
+  alias: Toggle moonlight mode
+  icon: mdi:moon-waning-crescent
+  sequence:
+  - choose:
+    - conditions:
+      - type: is_on
+        condition: device
+        device_id: 468c827d6567737911904d5677fd99e8
+        entity_id: binary_sensor.ceiling_nightlight
+        domain: binary_sensor
+      sequence:
+      - service: yeelight.set_mode
+        data:
+          entity_id: light.ceiling
+          mode: normal
+        entity_id: light.ceiling
+    default:
+    - service: yeelight.set_mode
+      data:
+        entity_id: light.ceiling
+        mode: moonlight
+      entity_id: light.ceiling
+  mode: single
+turn_moonlight_off:
+  alias: Turn moonlight off
+  sequence:
+  - service: yeelight.set_mode
+    data:
+      entity_id: light.ceiling
+      mode: normal
+  icon: mdi:moon-waning-crescent
+  mode: single
+turn_moonlight_on:
+  alias: Turn moonlight on
+  sequence:
+  - service: yeelight.set_mode
+    data:
+      entity_id: light.ceiling
+      mode: moonlight
+  - delay: 00:00:11
+  - service: yeelight.set_mode
+    data:
+      entity_id: light.ceiling
+      mode: moonlight
+  icon: mdi:moon-waning-crescent
+  mode: parallel
+  max: 10
+tod_its_morning_now:
+  alias: 'TOD: It''s morning now'
+  sequence:
+  - service: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.tod_morning_start
+    data_template:
+      time: '{{ now().time().strftime(''%H:%M:%S'') }}'
+  mode: single
+  icon: mdi:clock-time-eight-outline
+tod_its_day_now:
+  alias: 'TOD: It''s day now'
+  sequence:
+  - service: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.tod_day_start
+    data_template:
+      time: '{{ now().time().strftime(''%H:%M:%S'') }}'
+  mode: single
+  icon: mdi:clock-time-eleven-outline
+tod_its_early_evening_now:
+  alias: 'TOD: It''s early evening now'
+  sequence:
+  - service: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.tod_early_evening_start
+    data_template:
+      time: '{{ now().time().strftime(''%H:%M:%S'') }}'
+  mode: single
+  icon: mdi:clock-time-nine
+tod_its_evening_now:
+  alias: 'TOD: It''s evening now'
+  sequence:
+  - service: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.tod_evening_start
+    data_template:
+      time: '{{ now().time().strftime(''%H:%M:%S'') }}'
+  mode: single
+  icon: mdi:clock-time-ten
+tod_its_night_now:
+  alias: 'TOD: It''s night now'
+  sequence:
+  - service: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.tod_night_start
+    data_template:
+      time: '{{ now().time().strftime(''%H:%M:%S'') }}'
+  mode: single
+  icon: mdi:clock-time-twelve

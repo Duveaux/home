@@ -1,0 +1,33 @@
+light.kitchen:
+  icon: mdi:vanity-light
+light.living_room_lights:
+  icon: mdi:dome-light
+light.table:
+  icon: mdi:table-chair
+light.table_lights:
+  icon: mdi:table-chair
+light.desk:
+  icon: mdi:desk-lamp
+light.0x14b457fffe434b5a:
+  icon: mdi:toilet
+light.0x588e81fffe066172:
+  icon: mdi:shower-head
+light.0x680ae2fffeaeb55a:
+  icon: mdi:bed-king-outline
+light.0x90fd9ffffe777af0:
+  icon: mdi:package-variant
+light.0x588e81fffe0fd79c:
+  icon: mdi:washing-machine
+light.0x588e81fffe144ee2:
+  icon: mdi:desk
+light.ceiling:
+  icon: mdi:wall-sconce-flat
+light.ceiling_ambilight:
+  icon: mdi:television-ambient-light
+light.strip:
+  icon: mdi:led-strip-variant
+light.0xd0cf5efffe23840d:
+  icon: mdi:floor-lamp
+sensor.power_consumption:
+  min: '0'
+  max: '5000'

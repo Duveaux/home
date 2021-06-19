@@ -1,0 +1,23 @@
+*
+
+# Whitelist
+!/www
+!/themes
+!/blueprints
+!/custom_components
+!*.yaml
+!.gitignore
+!*.md
+
+# Other
+template_sensors.yaml
+
+# Ignore folders.
+.storage
+.cloud
+.google.token
+
+# Important
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml

@@ -1,0 +1,208 @@
+homeassistant:
+  allowlist_external_urls:
+    - !secret public_url
+    - !secret internal_url
+  customize:
+    script.ceiling_toggle_mode:
+      icon_template: >
+        {% if is_state('binary_sensor.ceiling_nightlight', 'on') %}mdi:moon-waning-crescent{% else %}mdi:weather-night{% endif %}
+      friendly_name_template: >
+        {% if is_state('binary_sensor.ceiling_nightlight', 'on') %}Activate moonlight{% else %}Deactivate moonlight{% endif %}
+config:
+history:
+recorder:
+discovery:
+  ignore:
+    - yeelight
+mobile_app:
+person:
+ssdp:
+sun:
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 192.168.0.2
+    - 172.17.0.7
+zeroconf:
+input_select:
+input_boolean:
+input_text:
+input_datetime:
+input_number:
+default_config:
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts: !secret pc_ip
+
+camera:
+  - platform: generic
+    still_image_url: !secret cam_static_url
+    stream_source: !secret cam_rtsp_url
+    name: MarkCam
+    username: !secret cam_username
+    password: !secret cam_password
+    verify_ssl: false
+
+frontend:
+  themes: !include_dir_named themes
+color_extractor:
+
+mqtt:
+  broker: !secret self_ip
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
+
+# Assistant
+google_assistant:
+  project_id: homeassistant-ef9c1
+  service_account: !include assistant_service_account.json
+  report_state: true
+  expose_by_default: true
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+spotify:
+  client_id: !secret spotify_id
+  client_secret: !secret spotify_secret
+
+yeelight:
+  devices:
+    192.168.0.101:
+      name: Table
+    192.168.0.102:
+      name: Desk
+    192.168.0.104:
+      name: Ceiling
+
+sensor:
+  - platform: random
+    minimum: 0
+    maximum: 100
+  - platform: dsmr
+    port: /dev/ttyUSB0
+    dsmr_version: 4
+  - platform: statistics
+    entity_id: sensor.power_consumption
+    name: "Power consumption stats"
+    sampling_size: 1000
+
+  - platform: template
+    sensors: !include template_sensors.yaml
+
+binary_sensor:
+  - platform: template
+    sensors:
+      kitchen_occupied:
+        friendly_name: Kitchen occupied
+        device_class: motion
+        value_template: >-
+          {{ is_state('binary_sensor.0x00158d0003f85e55_occupancy', 'on')
+          or is_state('binary_sensor.0x00158d00045ae9ac_occupancy', 'on') }}
+      hallway_occupied:
+        friendly_name: Hallway occupied
+        device_class: motion
+        value_template: >-
+          {{ is_state('binary_sensor.0x00158d00047b6e38_occupancy', 'on')
+          or is_state('binary_sensor.hallway_motion_2_occupancy', 'on') }}
+      shower_occupied:
+        friendly_name: Shower occupied
+        device_class: motion
+        value_template: >-
+          {{ is_state('binary_sensor.0x588e81fffe252a90_occupancy', 'on')
+          or is_state('binary_sensor.shower_motion_2_occupancy', 'on') }}
+      activity_living_room_media:
+        friendly_name: 🛋️ Watching TV
+        value_template: >-
+          {{ is_state('media_player.woonkamer_tv', 'playing') and (is_state_attr('media_player.woonkamer_tv', 'app_name', 'Netflix') or is_state_attr('media_player.woonkamer_tv', 'app_name', 'YouTube') or is_state_attr('media_player.woonkamer_tv', 'app_name', 'Plex') or is_state_attr('media_player.woonkamer_tv', 'app_name', 'Google Cast') or is_state_attr('media_player.woonkamer_tv', 'app_name', 'Twitch')) }}
+      activity_living_room_tv_on:
+        friendly_name: 🛋️ TV on
+        value_template: >-
+          {{ (is_state('media_player.woonkamer_tv', 'idle') or is_state('media_player.woonkamer_tv', 'playing') or is_state('media_player.woonkamer_tv', 'paused')) }}
+      activity_living_room_game:
+        friendly_name: 🛋️ Gaming
+        value_template: >-
+          {{ is_state('media_player.playstation_4', 'playing') }}
+      activity_living_room_music:
+        friendly_name: 🛋️ Music
+        value_template: >-
+          {{ is_state_attr('media_player.amp', 'source','Wireless') }}
+      activity_vic_working:
+        friendly_name: 🛋️ Behind PC
+        value_template: >-
+          {{ is_state('device_tracker.2c_fd_a1_b6_d6_0d', 'home') }}
+      activity_on_the_couch:
+        friendly_name: On the couch
+        value_template: >-
+          {% if is_state('input_boolean.on_the_couch_manual', 'on') or is_state('binary_sensor.activity_living_room_tv_on', 'on') %}
+          true
+          {% else %}
+          false
+          {% endif%}
+
+media_player:
+  - platform: nadtcp2
+    name: AMP
+    host: !secret amp_ip
+    volume_step: 2
+  - platform: androidtv
+    name: Woonkamer TV
+    host: !secret tv_ip
+  - platform: androidtv
+    name: Slaapkamer TV
+    host: !secret bedroom_tv_ip
+
+light:
+  - platform: group
+    name: All lights
+    entities:
+      - light.0x14b457fffe434b5a
+      - light.0x588e81fffe0602a7
+      - light.0x588e81fffe066172
+      - light.0x588e81fffe0fd79c
+      - light.0x588e81fffe144ee2
+      - light.0x680ae2fffeaeb55a
+      - light.0x90fd9ffffe67d8c8
+      - light.0x90fd9ffffe777af0
+      - light.0x90fd9ffffedbdd1d
+      - light.0x90fd9ffffede7529
+      - light.0x90fd9ffffee72acb
+      - light.0x90fd9ffffeee0abe
+      - light.0xd0cf5efffe23840d
+      - light.ceiling
+      - light.ceiling_ambilight
+      - light.desk
+      - light.strip
+      - light.table
+  - platform: group
+    name: Living room lights
+    entities:
+      - light.ceiling
+      - light.ceiling_ambilight
+      - light.strip
+      - light.0xd0cf5efffe23840d
+  - platform: group
+    name: Table lights
+    entities:
+      - light.0x90fd9ffffe67d8c8
+      - light.table
+  - platform: group
+    name: Living room and table
+    entities:
+      - light.table_lights
+      - light.living_room_lights
+      - light.desk
+  - platform: mqtt
+    schema: json
+    name: Kitchen
+    command_topic: "zigbee2mqtt/kitchen/set"
+    state_topic: "zigbee2mqtt/kitchen"
+    brightness: true
+    color_temp: true

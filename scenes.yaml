@@ -1,0 +1,1492 @@
+- id: '1607981216523'
+  name: 'Hallway: dim'
+  entities:
+    light.0x588e81fffe0602a7:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 13
+      linkquality: 52
+      state: 'on'
+      update_available: true
+      friendly_name: Hallway light
+      supported_features: 45
+  icon: mdi:ceiling-light
+- id: '1607981261308'
+  name: 'Hallway: normal'
+  entities:
+    light.0x588e81fffe0602a7:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 180
+      linkquality: 44
+      state: 'on'
+      update_available: true
+      friendly_name: Hallway light
+      supported_features: 45
+  icon: mdi:ceiling-light
+- id: '1607982743649'
+  name: 'Kitchen: mild'
+  entities:
+    light.kitchen:
+      min_mireds: 153
+      max_mireds: 500
+      brightness: 3
+      color_temp: 500
+      friendly_name: Kitchen
+      supported_features: 43
+      state: 'on'
+  icon: mdi:ceiling-light
+- id: '1607982799097'
+  name: 'Kitchen: bright'
+  entities:
+    light.kitchen:
+      min_mireds: 153
+      max_mireds: 500
+      brightness: 138
+      color_temp: 401
+      friendly_name: Kitchen
+      supported_features: 43
+      state: 'on'
+  icon: mdi:ceiling-light
+- id: '1609255780906'
+  name: Desk/Morning
+  entities:
+    light.desk:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 8
+      color_temp: 338
+      flowing: false
+      friendly_name: Desk
+      supported_features: 47
+      state: 'on'
+    light.table:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 26
+      color_temp: 384
+      hs_color:
+      - 28.614
+      - 68.881
+      rgb_color:
+      - 255
+      - 163
+      - 79
+      xy_color:
+      - 0.536
+      - 0.389
+      flowing: false
+      friendly_name: Table
+      supported_features: 63
+      state: 'on'
+  icon: mdi:desk
+- id: '1609255816394'
+  name: Desk/Early evening
+  entities:
+    light.desk:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 69
+      color_temp: 254
+      flowing: false
+      friendly_name: Desk
+      supported_features: 47
+      state: 'on'
+    light.table:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 18
+      color_temp: 330
+      hs_color:
+      - 28.026
+      - 59.608
+      rgb_color:
+      - 255
+      - 173
+      - 102
+      xy_color:
+      - 0.507
+      - 0.384
+      flowing: false
+      friendly_name: Table
+      supported_features: 63
+      state: 'on'
+  icon: mdi:desk
+- id: '1609255849212'
+  name: Desk/Evening
+  entities:
+    light.desk:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 255
+      color_temp: 332
+      flowing: false
+      friendly_name: Desk
+      supported_features: 47
+      state: 'on'
+    light.table:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 128
+      color_temp: 330
+      hs_color:
+      - 27.777
+      - 56.086
+      rgb_color:
+      - 255
+      - 178
+      - 111
+      xy_color:
+      - 0.494
+      - 0.383
+      flowing: false
+      friendly_name: Table
+      supported_features: 63
+      state: 'on'
+  icon: mdi:desk
+- id: '1609255923860'
+  name: Desk/Off
+  entities:
+    light.desk:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      flowing: false
+      friendly_name: Desk
+      supported_features: 47
+      state: 'off'
+  icon: mdi:desk
+- id: '1609256361754'
+  name: 'Desk: Night'
+  entities:
+    light.desk:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 8
+      color_temp: 370
+      flowing: false
+      friendly_name: Desk
+      supported_features: 47
+      state: 'on'
+    light.table:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 3
+      color_temp: 588
+      hs_color:
+      - 28.401
+      - 100
+      rgb_color:
+      - 255
+      - 120
+      - 0
+      xy_color:
+      - 0.621
+      - 0.367
+      flowing: false
+      friendly_name: Table
+      supported_features: 63
+      state: 'on'
+  icon: mdi:desk
+- id: '1609256608005'
+  name: TV/Morning
+  entities:
+    light.ceiling:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 3
+      color_temp: 370
+      flowing: false
+      night_light: true
+      friendly_name: Ceiling
+      supported_features: 47
+      state: 'on'
+    light.ceiling_ambilight:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 13
+      color_temp: 336
+      hs_color:
+      - 29.647
+      - 100
+      rgb_color:
+      - 255
+      - 125
+      - 0
+      xy_color:
+      - 0.615
+      - 0.372
+      flowing: false
+      night_light: true
+      friendly_name: Ceiling ambilight
+      supported_features: 63
+      state: 'on'
+    script.turn_moonlight_on:
+      last_triggered: '2020-12-29T15:42:50.199992+00:00'
+      mode: single
+      current: 0
+      friendly_name: Turn moonlight on
+      icon: mdi:moon-waning-crescent
+      state: 'off'
+    light.0xd0cf5efffe23840d:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 15
+      hs_color:
+      - 29.497
+      - 70.196
+      rgb_color:
+      - 255
+      - 163
+      - 76
+      xy_color:
+      - 0.538
+      - 0.391
+      color:
+        x: 0.539
+        y: 0.392
+      linkquality: 63
+      state: 'on'
+      update_available: true
+      friendly_name: Standing
+      supported_features: 61
+    light.strip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      friendly_name: Strip
+      supported_features: 63
+      state: unavailable
+  icon: mdi:television
+- id: '1609256853442'
+  name: 'TV: Early evening'
+  entities:
+    light.ceiling:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 204
+      color_temp: 370
+      flowing: false
+      night_light: true
+      friendly_name: Ceiling
+      supported_features: 47
+      state: 'on'
+    light.ceiling_ambilight:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 235
+      color_temp: 370
+      hs_color:
+      - 29.412
+      - 100
+      rgb_color:
+      - 255
+      - 125
+      - 0
+      xy_color:
+      - 0.615
+      - 0.372
+      flowing: false
+      night_light: true
+      friendly_name: Ceiling ambilight
+      supported_features: 63
+      state: 'on'
+    script.turn_moonlight_on:
+      last_triggered: '2020-12-29T15:56:44.321740+00:00'
+      mode: single
+      current: 0
+      friendly_name: Turn moonlight on
+      icon: mdi:moon-waning-crescent
+      state: 'off'
+    light.strip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 133
+      color_temp: 400
+      hs_color:
+      - 26.154
+      - 30.588
+      rgb_color:
+      - 255
+      - 211
+      - 177
+      xy_color:
+      - 0.407
+      - 0.36
+      flowing: false
+      friendly_name: Strip
+      supported_features: 63
+      state: 'on'
+    light.0xd0cf5efffe23840d:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 120
+      hs_color:
+      - 30.207
+      - 56.863
+      rgb_color:
+      - 255
+      - 182
+      - 109
+      xy_color:
+      - 0.491
+      - 0.39
+      color:
+        x: 0.491
+        y: 0.39
+      linkquality: 63
+      state: 'on'
+      update_available: true
+      friendly_name: Standing
+      supported_features: 61
+  icon: mdi:television
+- id: '1609256980178'
+  name: TV / Early evening / Playing
+  entities:
+    light.ceiling:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      flowing: false
+      night_light: false
+      friendly_name: Ceiling
+      supported_features: 47
+      state: 'off'
+    light.ceiling_ambilight:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 87
+      color_temp: 370
+      hs_color:
+      - 275.059
+      - 100
+      rgb_color:
+      - 149
+      - 0
+      - 255
+      xy_color:
+      - 0.244
+      - 0.09
+      flowing: false
+      night_light: false
+      friendly_name: Ceiling ambilight
+      supported_features: 63
+      state: 'on'
+    script.turn_moonlight_on:
+      last_triggered: '2020-12-29T15:51:12.619385+00:00'
+      mode: single
+      current: 0
+      friendly_name: Turn moonlight on
+      icon: mdi:moon-waning-crescent
+      state: 'off'
+    light.0xd0cf5efffe23840d:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 23
+      hs_color:
+      - 30.207
+      - 56.863
+      rgb_color:
+      - 255
+      - 182
+      - 109
+      xy_color:
+      - 0.491
+      - 0.39
+      color:
+        x: 0.491
+        y: 0.39
+      linkquality: 63
+      state: 'on'
+      update_available: true
+      friendly_name: Standing
+      supported_features: 61
+    light.strip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 31
+      color_temp: 400
+      hs_color:
+      - 26.154
+      - 30.588
+      rgb_color:
+      - 255
+      - 211
+      - 177
+      xy_color:
+      - 0.407
+      - 0.36
+      flowing: false
+      friendly_name: Strip
+      supported_features: 63
+      state: 'on'
+  icon: mdi:television
+- id: '1609257222207'
+  name: TV / Evening
+  entities:
+    light.ceiling:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      flowing: false
+      night_light: false
+      friendly_name: Ceiling
+      supported_features: 47
+      state: 'off'
+    light.ceiling_ambilight:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 235
+      color_temp: 370
+      hs_color:
+      - 275.059
+      - 100
+      rgb_color:
+      - 149
+      - 0
+      - 255
+      xy_color:
+      - 0.244
+      - 0.09
+      flowing: false
+      night_light: false
+      friendly_name: Ceiling ambilight
+      supported_features: 63
+      state: 'on'
+    script.turn_moonlight_on:
+      last_triggered:
+      mode: parallel
+      current: 0
+      max: 10
+      friendly_name: Turn moonlight on
+      icon: mdi:moon-waning-crescent
+      state: 'off'
+    light.0xd0cf5efffe23840d:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 186
+      hs_color:
+      - 30.207
+      - 56.863
+      rgb_color:
+      - 255
+      - 182
+      - 109
+      xy_color:
+      - 0.491
+      - 0.39
+      color:
+        x: 0.491
+        y: 0.39
+      linkquality: 49
+      state: 'on'
+      update_available: true
+      friendly_name: Standing
+      supported_features: 61
+    light.strip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 255
+      color_temp: 250
+      hs_color:
+      - 28.865
+      - 72.549
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      flowing: false
+      friendly_name: Strip
+      supported_features: 63
+      state: 'on'
+  icon: mdi:television
+- id: '1609257294932'
+  name: TV / Evening / Playing
+  entities:
+    light.ceiling:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      flowing: false
+      night_light: true
+      friendly_name: Ceiling
+      supported_features: 47
+      state: 'off'
+    light.ceiling_ambilight:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 255
+      color_temp: 370
+      hs_color:
+      - 275.059
+      - 100
+      rgb_color:
+      - 149
+      - 0
+      - 255
+      xy_color:
+      - 0.244
+      - 0.09
+      flowing: false
+      night_light: true
+      friendly_name: Ceiling ambilight
+      supported_features: 63
+      state: 'on'
+    script.turn_moonlight_on:
+      last_triggered: '2020-12-29T15:51:12.619385+00:00'
+      mode: single
+      current: 0
+      friendly_name: Turn moonlight on
+      icon: mdi:moon-waning-crescent
+      state: 'off'
+    light.0xd0cf5efffe23840d:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 26
+      hs_color:
+      - 30.207
+      - 56.863
+      rgb_color:
+      - 255
+      - 182
+      - 109
+      xy_color:
+      - 0.491
+      - 0.39
+      color:
+        x: 0.491
+        y: 0.39
+      linkquality: 63
+      state: 'on'
+      update_available: true
+      friendly_name: Standing
+      supported_features: 61
+    light.strip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 64
+      color_temp: 400
+      hs_color:
+      - 28.865
+      - 72.549
+      rgb_color:
+      - 255
+      - 159
+      - 70
+      xy_color:
+      - 0.546
+      - 0.389
+      flowing: false
+      friendly_name: Strip
+      supported_features: 63
+      state: 'on'
+  icon: mdi:television
+- id: '1609259427340'
+  name: 'Living room: normal'
+  entities:
+    light.ceiling:
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 255
+      color_temp: 314
+      flowing: false
+      night_light: true
+      friendly_name: Ceiling
+      supported_features: 47
+      state: 'on'
+    light.ceiling_ambilight:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 184
+      color_temp: 370
+      hs_color:
+      - 29.836
+      - 71.765
+      rgb_color:
+      - 255
+      - 162
+      - 71
+      xy_color:
+      - 0.542
+      - 0.392
+      flowing: false
+      night_light: true
+      friendly_name: Ceiling ambilight
+      supported_features: 63
+      state: 'on'
+    script.turn_moonlight_on:
+      last_triggered: '2020-12-29T16:29:49.054387+00:00'
+      mode: parallel
+      current: 0
+      max: 10
+      friendly_name: Turn moonlight on
+      icon: mdi:moon-waning-crescent
+      state: 'off'
+    light.0xd0cf5efffe23840d:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 160
+      hs_color:
+      - 30.207
+      - 56.863
+      rgb_color:
+      - 255
+      - 182
+      - 109
+      xy_color:
+      - 0.491
+      - 0.39
+      color:
+        x: 0.491
+        y: 0.39
+      linkquality: 76
+      state: 'on'
+      update_available: true
+      friendly_name: Standing
+      supported_features: 61
+    light.strip:
+      min_mireds: 153
+      max_mireds: 588
+      effect_list:
+      - Strobe color
+      - Police
+      - Christmas
+      - RGB
+      - Random Loop
+      - Fast Random Loop
+      - LSD
+      - Slowdown
+      - Night Mode
+      - Date Night
+      - Movie
+      - Sunrise
+      - Sunset
+      - Romance
+      - Happy Birthday
+      - Disco
+      - Strobe epilepsy!
+      - Alarm
+      - Police2
+      - WhatsApp
+      - Facebook
+      - Twitter
+      - Home
+      - Candle Flicker
+      - Slow Temp
+      - Stop
+      - Fire Flicker
+      - Lightning
+      - Flicker
+      - Flicker2
+      - FlickerScare
+      - FlickerWarm
+      - FlickerWarmScare
+      - Self_Alarm
+      - Candle mild
+      - Candle extreme
+      - Candle very extreme
+      - Sunrise
+      brightness: 189
+      color_temp: 400
+      hs_color:
+      - 26.154
+      - 30.588
+      rgb_color:
+      - 255
+      - 211
+      - 177
+      xy_color:
+      - 0.407
+      - 0.36
+      flowing: false
+      friendly_name: Strip
+      supported_features: 63
+      state: 'on'
